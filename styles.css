@@ -1,0 +1,273 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Theme */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff5b7;
+}
+
+/* Landing Page */
+.landing {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('path/to/your/background.jpg') no-repeat center center/cover;
+}
+
+.logo-container {
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 15px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    background: url('path/to/your/logo.png') no-repeat center center/cover;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+}
+
+.landing h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.landing p {
+    font-size: 1.2em;
+}
+
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* About Section */
+#about-us {
+    background: transparent;
+}
+
+.about-text {
+    font-size: 1.5em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Donate Section */
+#donate {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.donate-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.donate-content img {
+    width: 150px;
+    border-radius: 10px;
+}
+
+.donate-text {
+    font-size: 1.2em;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+/* Members Section */
+#members {
+    background: transparent;
+}
+
+.member-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+}
+
+.member-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #ccc;
+}
+
+.member-card span {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* Contact Section */
+#contact-us {
+    background: transparent;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2em;
+}
+
+.contact-card a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.contact-card i {
+    font-size: 1.5em;
+}
+
+/* Gallery Section */
+#gallery {
+    background: transparent;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 20px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .about-text {
+        font-size: 1.2em;
+    }
+
+    .donate-content {
+        flex-direction: column;
+    }
+
+    .donate-content img {
+        width: 100px;
+    }
+
+    .donate-text {
+        font-size: 1em;
+    }
+
+    .member-card {
+        width: 100px;
+    }
+
+    .member-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .member-card span {
+        font-size: 1em;
+    }
+
+    .contact-card a {
+        font-size: 1.2em;
+    }
+
+    .gallery img {
+        width: 150px;
+        height: 150px;
+    }
+}

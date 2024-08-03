@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASURA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+        .loader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .loader video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            z-index: 999;
+            transition: background 0.3s;
+        }
+        .navbar .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .navbar a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .navbar a:hover {
+            color: #aaa;
+            transform: scale(1.1);
+        }
+        .menu {
+            display: flex;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 5px;
+            transition: transform 0.3s;
+        }
+        .hamburger.active div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .menu.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .landing-page {
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background-attachment: fixed;
+            flex-direction: column;
+            z-index: 1;
+        }
+        .landing-page img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .landing-page img:hover {
+            transform: rotate(360deg);
+        }
+        .landing-page h1 {
+            font-size: 3rem;
+            margin: 10px 0;
+            transition: transform 0.3s;
+        }
+        .landing-page h1:hover {
+            transform: scale(1.1);
+        }
+        .landing-page p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            transition: transform 0.3s;
+        }
+        .landing-page p:hover {
+            transform: scale(1.05);
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .social-icons a:hover {
+            color: #aaa;
+            transform: scale(1.2);
+        }
+        .section {
+            height: 100vh;
+            background: #222;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background-attachment: fixed;
+        }
+        .footer {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 998;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .navbar {
+                padding: 10px 20px;
+            }
+            .menu.active a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <video src="video/intro.mp4" autoplay muted></video>
+    </div>
+    <nav class="navbar">
+        <div class="brand">ASURA</div>
+        <div class="menu">
+            <a href="#about-us">About Us</a>
+            <a href="#donate">Donate</a>
+            <a href="#members">Members</a>
+            <a href="#contact-us">Contact Us</a>
+            <a href="#gallery">Gallery</a>
+        </div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+    <video class="bg-video" src="video/bg.mp4" autoplay muted loop></video>
+    <div class="landing-page">
+        <img src="img/logo.jpg" alt="ASURA Logo">
+        <h1>ASURA</h1>
+        <p>Started in 2022</p>
+        <p>"Sewa Paramo Dharma"</p>
+        <p>Youth Organization</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/_asura_official_"><i class="fab fa-instagram"></i></a>
+            <a href="https://discord.gg/KRYGeV2Q"><i class="fab fa-discord"></i></a>
+            <a href="https://join.slack.com/t/asura-gwc3730/shared_invite/zt-2gsd858ma-mcK9xNaUivWS4Js5mgfwFA"><i class="fab fa-slack"></i></a>
+            <a href="https://in.linkedin.com/in/m-s-asura-3234b529b"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:asuraofficial21@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+    <div class="section" id="about-us">
+        <h2>About Us</h2>
+        <div class="about-text">
+            <p>We are a youth organization named ASURA. We conduct poojas and festivals such as Rath Yatra, Saraswati Pooja, Durga Pooja, and many others. We also donate to needy children. Our motto is 'Sewa Paramo Dharma,' which means 'Service is our prime duty.'</p>
+        </div>
+    </div>
+    
+    <div class="section" id="donate">
+        <h2>Donate</h2>
+        <div class="donate-content">
+            <img src="img/qr.JPG" alt="QR Code">
+            <div class="donate-text">
+                <p>Bank Details:</p>
+                <p>ACCOUNT_NUMBER: 500101013092912</p>
+                <p>IFSC: CIUB0000147</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section" id="members">
+        <h2>Members</h2>
+        <div class="members">
+            <div class="member-cards">
+                <div class="member-card">
+                    <img src="https://via.placeholder.com/100" alt="Member 1">
+                    <span>Preetam</span>
+                </div>
+                <div class="member-card">
+                    <img src="https://via.placeholder.com/100" alt="Member 2">
+                    <span>Arnab</span>
+                </div>
+                <div class="member-card">
+                    <img src="https://via.placeholder.com/100" alt="Member 3">
+                    <span>Ritu</span>
+                </div>
+                <div class="member-card">
+                    <img src="https://via.placeholder.com/100" alt="Member 4">
+                    <span>Suman</span>
+                </div>
+                <div class="member-card">
+                    <img src="https://via.placeholder.com/100" alt="Member 5">
+                    <span>Jaana</span>
+                </div>
+                <div class="member-card">
+                    <img src="https://via.placeholder.com/100" alt="Member 6">
+                    <span>Srinjoy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section" id="contact-us">
+        <h2>Contact Us</h2>
+        <div class="contact-card">
+            <a href="https://www.instagram.com/_asura_official_/" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://discord.gg/KRYGeV2Q" target="_blank">
+                <i class="fab fa-discord"></i> Discord
+            </a>
+            <a href="https://join.slack.com/t/asura-gwc3730/shared_invite/zt-2gsd858ma-mcK9xNaUivWS4Js5mgfwFA" target="_blank">
+                <i class="fab fa-slack"></i> Slack
+            </a>
+            <a href="https://in.linkedin.com/in/m-s-asura-3234b529b?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="mailto:asuraofficial21@gmail.com">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+        </div>
+    </div>
+    
+    <div class="section" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/200" alt="Gallery Image 1">
+            <img src="https://via.placeholder.com/200" alt="Gallery Image 2">
+            <img src="https://via.placeholder.com/200" alt="Gallery Image 3">
+            <img src="https://via.placeholder.com/200" alt="Gallery Image 4">
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Associated to <a href="https://attibelebengalidurgapuja.com">attibelebengalidurgapuja.com</a></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loader = document.querySelector('.loader');
+            const video = loader.querySelector('video');
+            const hamburger = document.querySelector('.hamburger');
+            const menu = document.querySelector('.menu');
+            const footer = document.querySelector('.footer');
+            const sections = document.querySelectorAll('.section');
+            
+            video.onended = function() {
+                gsap.to(loader, {opacity: 0, duration: 1, onComplete: () => loader.style.display = 'none'});
+                gsap.from(".landing-page img", {duration: 2, opacity: 0, scale: 0.5, delay: 0.5});
+                gsap.from(".landing-page h1", {duration: 2, opacity: 0, y: -50, delay: 1});
+                gsap.from(".landing-page p", {duration: 2, opacity: 0, y: 50, delay: 1.5});
+                gsap.from(".social-icons a", {duration: 2, opacity: 0, y: 20, stagger: 0.2, delay: 2});
+            };
+            
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                menu.classList.toggle('active');
+                gsap.fromTo('.menu.active a', {opacity: 0, y: -20}, {opacity: 1, y: 0, duration: 0.5, stagger: 0.1});
+            });
+            
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY + window.innerHeight;
+                
+                sections.forEach((section, index) => {
+                    const offset = section.offsetTop;
+                    const height = section.offsetHeight;
+                    
+                    if (scrollPosition >= offset + height) {
+                        gsap.to(section, {opacity: 1, y: 0, duration: 1});
+                    } else {
+                        gsap.to(section, {opacity: 0, y: 50, duration: 1});
+                    }
+                });
+                
+                if (scrollPosition >= document.body.scrollHeight - footer.offsetHeight) {
+                    gsap.to(footer, {opacity: 1, display: 'block', duration: 1});
+                } else {
+                    gsap.to(footer, {opacity: 0, display: 'none', duration: 1});
+                }
+            });
+        });
+    </script>
+</body>
+</html>
